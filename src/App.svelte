@@ -1,35 +1,21 @@
 <script>
+  import Router from 'svelte-spa-router'
 
-import AsideLeft from "./lib/AsideLeft.svelte"
-import Main from "./lib/Main.svelte"
-import AsideRight from "./lib/AsideRight.svelte"
-import Carousel from "./lib/components/Carousel.svelte"
-import Serie from "./lib/components/Serie.svelte"
+  import SerieDetails from './routes/SerieDetails.svelte'
+  import HomePage from './routes/HomePage.svelte'
+  import NotFound from './routes/NotFound.svelte'
 
-  const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/original'
 
-  import { onMount } from "svelte";
-  const endpoint = 'https://api.themoviedb.org/3/trending/all/day?api_key=1b7867a22a2071d3058b7ac05a739997';
-  let promise = fetch(endpoint).then((x) => x.json());
+  const routes = {
 
+    '/': HomePage,
+    '/serie/:id': SerieDetails,
+
+    //...
+
+    '*': NotFound,
+
+  }
 </script>
 
-
-<div class="flex min-h-screen  2xl:max-w-screen-2xl 2xl:mx-auto 2xl:border-x-2 2xl:border-gray-200 dark:2xl:border-zinc-700 ">
- 
-  <AsideLeft />
-
-  <Main>
-    <Carousel />
-    {#await promise}
-      Fetching Data
-    {:then data}
-      {#each data.results as serie}
-      <Serie {serie} />
-      {/each}
-    {/await}
-  </Main>
-
-  <AsideRight />
-</div>
-
+<Router {routes} />

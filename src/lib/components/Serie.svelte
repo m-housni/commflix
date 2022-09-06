@@ -1,7 +1,9 @@
 <script>
   export let serie
   import Comments from "./Comments.svelte";
+  
   const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/original'
+
 </script>
 <div
   class="flex flex-col justify-between mt-4 bg-black/10 bg-blend-multiply rounded-lg overflow-hidden bg-cover bg-center text-white h-auto"
@@ -17,17 +19,19 @@
     <span class="pl-4 text-xs drop-shadow-lg">+8 friends are watching</span>
   </div>
   <div class="bg-gradient-to-r from-black/30 to-transparent p-6">
-    <span class="uppercase text-3xl font-semibold drop-shadow-lg ">{serie.name}</span>
+    <a href={`#/serie/${serie.id}`}>
+      <span class="uppercase text-3xl font-semibold drop-shadow-lg ">{serie.name}</span>
+    </a>
     <div class="text-xs text-gray-200 mt-2">
       <a href="#" class="">Action</a>,
       <a href="#" class="">Adventure</a>,
       <a href="#" class="">Sci-Fi</a>
     </div>
 
-    <Comments />
+    <!-- <Comments /> -->
 
     <div class="flex float-right">
-      View Details
+      <a href={`#/serie/${serie.id}`}>View Details</a>
     </div>
   </div>
 </div>
