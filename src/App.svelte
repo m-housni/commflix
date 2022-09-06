@@ -1,10 +1,16 @@
 <script>
-import AsideLeft from "./lib/AsideLeft.svelte";
-import Main from "./lib/Main.svelte";
-import AsideRight from "./lib/AsideRight.svelte";
 
+import AsideLeft from "./lib/AsideLeft.svelte"
+import Main from "./lib/Main.svelte"
+import AsideRight from "./lib/AsideRight.svelte"
+import Carousel from "./lib/components/Carousel.svelte"
+import Serie from "./lib/components/Serie.svelte"
 
-  
+  const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/original'
+
+  import { onMount } from "svelte";
+  const endpoint = 'https://api.themoviedb.org/3/trending/all/day?api_key=1b7867a22a2071d3058b7ac05a739997';
+  let promise = fetch(endpoint).then((x) => x.json());
 
 </script>
 
@@ -13,7 +19,16 @@ import AsideRight from "./lib/AsideRight.svelte";
  
   <AsideLeft />
 
-  <Main />
+  <Main>
+    <Carousel />
+    {#await promise}
+      Fetching Data
+    {:then data}
+      {#each data.results as serie}
+      <Serie {serie} />
+      {/each}
+    {/await}
+  </Main>
 
   <AsideRight />
 </div>

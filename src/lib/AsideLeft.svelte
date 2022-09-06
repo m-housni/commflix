@@ -1,5 +1,6 @@
 <script>
-
+   import { Router, Route, Link } from "svelte-routing";
+    import Home from "./routes/home.svelte";
 </script>
 
  <!-- Left Sidebar -->

@@ -31,43 +31,9 @@
 
     <section>
       <nav class="flex space-x-6 text-gray-400 font-medium">
-        <a href="#" class="hover:text-gray-700 dark:hover:text-white">A LA UNE</a>
+        <a href="#" class="hover:text-gray-700 dark:hover:text-white">TANDANCES (A LA UNE)</a>
       </nav>
-
-      <div
-        class="flex flex-col justify-between mt-4 bg-black/10 bg-blend-multiply rounded-3xl h-80 overflow-hidden bg-cover bg-center text-white h-auto"
-        style="background-image: url('images/inception.jpg');">
-        <img class="object-cover rounded-lg h-full w-full" src="/inception.jpg" alt="">
-        <div class="hidden flex -space-x-1 items-center ">
-          <img class="rounded-full w-7 h-7 shadow-lg border border-white"
-            src="https://api.lorem.space/image/face?w=32&amp;h=32&amp;hash=zsrj8csk" alt="" srcset="">
-          <img class="rounded-full w-7 h-7 shadow-lg border border-white"
-            src="https://api.lorem.space/image/face?w=32&amp;h=32&amp;hash=zsrj8cck" alt="" srcset="">
-          <img class="rounded-full w-7 h-7 shadow-lg border border-white"
-            src="https://api.lorem.space/image/face?w=32&amp;h=32&amp;hash=zsfj8cck" alt="" srcset="">
-          <span class="pl-4 text-xs drop-shadow-lg">+8 friends are watching</span>
-        </div>
-        <div class="bg-gradient-to-r from-black/30 to-transparent p-6">
-          <span class="uppercase text-3xl font-semibold drop-shadow-lg ">Inception</span>
-          <div class="text-xs text-gray-200 mt-2">
-            <a href="#" class="">Action</a>,
-            <a href="#" class="">Adventure</a>,
-            <a href="#" class="">Sci-Fi</a>
-          </div>
-          <div class="flex float-right">
-            <svg
-              class="m-1 h-7 w-7 rounded-full border p-1 hover:border-red-600 hover:fill-red-600 dark:fill-white dark:hover:fill-red-600"
-              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M13.293 6.293L7.58 12l5.7 5.7 1.41-1.42 -4.3-4.3 4.29-4.293Z"></path>
-            </svg>
-            <svg
-              class="m-1 h-7 w-7 rounded-full border p-1 hover:border-red-600 hover:fill-red-600 dark:fill-white dark:hover:fill-red-600"
-              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M10.7 17.707l5.7-5.71 -5.71-5.707L9.27 7.7l4.29 4.293 -4.3 4.29Z"></path>
-            </svg>
-          </div>
-        </div>
-      </div>
+      <slot/>
     </section>
   </main>
 
