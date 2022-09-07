@@ -21,7 +21,7 @@
 {:then data}
 <div
   class="mb-6 flex flex-col justify-between mt-4 bg-black/10 bg-blend-multiply rounded-lg overflow-hidden bg-cover bg-center text-white"
-  style={`background-image: url(${IMAGE_BASE_URL}${data.results[i].backdrop_path}); height: 360px;`}>
+  style={`background-image: url(${IMAGE_BASE_URL}${data.results[i].backdrop_path}); height: 560px;`}>
   <!-- <img class="object-cover rounded-lg h-full w-full" src="/inception.jpg" alt=""> -->
   <div class="flex float-right p-6">
     <svg on:click={prev}
