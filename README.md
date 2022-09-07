@@ -8,6 +8,10 @@ git clone https://github.com/m-housni/commflix.git
 npm install
 npm run dev
 ```
+Visiter
+```
+http://127.0.0.1:5173/
+```
 # DEMO
 https://m-housni.github.io/commflix/
 
