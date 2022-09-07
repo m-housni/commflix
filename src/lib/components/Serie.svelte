@@ -1,6 +1,10 @@
 <script>
   export let serie
-  import Comments from "./Comment.svelte";
+
+  import Comment from "./Comment.svelte";
+  
+  const url = `https://api.themoviedb.org/3/tv/${serie.id}/reviews?api_key=1b7867a22a2071d3058b7ac05a739997`
+  let serieReviews = fetch(url).then((x) => x.json())
   
   const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/original'
 
@@ -22,16 +26,21 @@
     <a href={`#/serie/${serie.id}`}>
       <span class="uppercase text-3xl font-semibold drop-shadow-lg ">{serie.name}</span>
     </a>
-    <div class="text-xs text-gray-200 mt-2">
-      <a href="#" class="">Action</a>,
-      <a href="#" class="">Adventure</a>,
-      <a href="#" class="">Sci-Fi</a>
-    </div>
 
     <!-- <Comments /> -->
-
-    <div class="flex float-right">
-      <a href={`#/serie/${serie.id}`}>View Details</a>
-    </div>
+    {#await serieReviews}
+          ...
+    {:then reviews}
+      {#if reviews.results.length === 0}
+        <div class="mt-6">
+          Pas de commentaire, soyez le premier à en laisser un !
+        </div>
+      {:else}
+      {#each reviews.results.splice(0,10) as review, i}
+      <span class="block text-3xl font-semibold drop-shadow-lg mt-6">Reviews</span>
+        <Comment {review} />
+      {/each}
+      {/if}
+    {/await}
   </div>
 </div>

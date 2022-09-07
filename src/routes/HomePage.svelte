@@ -21,7 +21,7 @@ import Serie from "../lib/components/Serie.svelte"
     {#await promise}
       Fetching Data
     {:then data}
-      {#each data.results as serie}
+      {#each data.results.slice(0,5) as serie}
       <Serie {serie} />
       {/each}
     {/await}

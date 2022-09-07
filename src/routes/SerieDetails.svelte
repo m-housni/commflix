@@ -51,11 +51,13 @@ import Comment from "../lib/components/Comment.svelte";
         <span class="block text-md font-semibold drop-shadow-lg text-gray-400">{serie.overview}</span>
 
         <div class="flex items-center mt-2">
-          <span class="text-sm text-gray-400 drop-shadow-lg">{serie.release_date}</span>
-          <span class="text-sm text-gray-400 drop-shadow-lg mx-2">•</span>
-          <span class="text-sm text-gray-400 drop-shadow-lg">{serie.vote_average}</span>
-          <span class="text-sm text-gray-400 drop-shadow-lg mx-2">•</span>
+          <span class="text-sm text-gray-400 drop-shadow-lg">Votes: {serie.vote_average}</span>
+          <span class="text-sm text-gray-400 drop-shadow-lg mx-2">/</span>
           <span class="text-sm text-gray-400 drop-shadow-lg">{serie.vote_count}</span>
+          <span class="text-sm text-gray-400 drop-shadow-lg mx-2">•</span>
+          <span class="text-sm text-gray-400 drop-shadow-lg">Prochaine episode le: {serie.next_episode_to_air.air_date}</span>
+          <span class="text-sm text-gray-400 drop-shadow-lg mx-2">•</span>
+          <span class="text-sm text-gray-400 drop-shadow-lg">Numero: {serie.next_episode_to_air.episode_number}</span>
         </div>
 
         <div class="text-xs text-gray-200 mt-2">
@@ -86,8 +88,8 @@ import Comment from "../lib/components/Comment.svelte";
               Pas de commentaire, soyez le premier à en laisser un !
             </div>
           {:else}
-          {#each reviews.results as review, i}
           <span class="block text-3xl font-semibold drop-shadow-lg mt-6">Reviews</span>
+          {#each reviews.results as review, i}
             <Comment {review} />
           {/each}
           {/if}
