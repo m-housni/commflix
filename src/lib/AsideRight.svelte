@@ -33,7 +33,7 @@
           <img src={`${IMAGE_BASE_URL}${serie.poster_path}`} class="rounded-lg w-1/3" alt="" >
           <div class="flex flex-col justify-between  ">
             <div class="flex flex-col space-y-1">
-              <a href={`/#/serie/${serie.id}`} >
+              <a href={`/commflix/serie/${serie.id}`} >
                 <span class="text-gray-700 dark:text-white font-semibold">{serie.name}</span>
               </a>
               <span class="text-xxs hidden xl:block">Drama</span>
