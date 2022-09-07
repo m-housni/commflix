@@ -1,6 +1,6 @@
 <script>
   export let serie
-  import Comments from "./Comments.svelte";
+  import Comments from "./Comment.svelte";
   
   const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/original'
 

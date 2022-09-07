@@ -17,7 +17,7 @@
     </svg>
     <a href="/#/">
       <div class="tracking-wide dark:text-white">
-        COMMFIX<span class="text-red-600">.</span>
+        COMMFLIX<span class="text-red-600">.</span>
       </div>
     </a>
   </div>

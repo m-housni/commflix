@@ -9,7 +9,7 @@
   <div class="flex justify-between items-center">
     <div class="mt-4 flex items-center space-x-4 py-6">
       <div class="">
-        <img class="w-12 h-12 rounded-full" src={review.author_details.avatar_path ? `${IMAGE_BASE_URL}/${review.author_details.avatar_path}` : 'https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/54/54cdbf27ef827822eb34715fde4457ebd772311d.jpg'} alt="" />
+        <img class="w-12 h-12 rounded-full" src={review?.author_details?.avatar_path ? `${IMAGE_BASE_URL}/${review.author_details.avatar_path}` : 'https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/54/54cdbf27ef827822eb34715fde4457ebd772311d.jpg'} alt="" />
       </div>
       <div class="text-sm font-semibold">{review.author} • <span class="font-normal"> {review.created_at}</span></div>
     </div>
