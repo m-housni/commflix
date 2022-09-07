@@ -40,6 +40,9 @@
     <a href={`/#/serie/${data.results[i].id}`}>
       <span class="uppercase text-3xl font-semibold drop-shadow-lg ">{data.results[i].name}</span>
     </a>
+    <div class="text-sm text-gray-300">
+      {data.results[i].overview}
+    </div>
     <div class="text-xs text-gray-200 mt-2">
       {data.results[i].original_language} | <span>{data.results[i].origin_country}</span>
     </div>

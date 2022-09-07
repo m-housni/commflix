@@ -98,5 +98,5 @@ import Comment from "../lib/components/Comment.svelte";
     {/await}
   </Main>
 
-  <AsideRight />
+  <!-- <AsideRight /> -->
 </div>

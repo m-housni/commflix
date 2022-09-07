@@ -23,7 +23,6 @@
             COMMFLIX<span class="text-red-600">.</span>
           </div>
         </a>
-        <!-- <a href="#/serie" class="hover:text-gray-700 dark:hover:text-white">TANDANCES (A LA UNE)</a> -->
       </nav>
       <slot/>
     </section>

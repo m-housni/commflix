@@ -27,6 +27,6 @@ import Serie from "../lib/components/Serie.svelte"
     {/await}
   </Main>
 
-  <AsideRight />
+  <!-- <AsideRight /> -->
 </div>
 
